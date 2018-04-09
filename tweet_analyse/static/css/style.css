@@ -1,0 +1,15 @@
+.wrapper {
+    text-align: center;
+}
+
+.wrapper button {
+    position: absolute;
+    top: 40%;
+    left: 42%;
+}
+
+body {
+    background: url(http://localhost:8000/static/images/graph_bg.svg) no-repeat;
+    background-position-y: 300px;
+    background-position-x: 900px;
+}
