@@ -104,3 +104,7 @@ ENV/
 .mypy_cache/
 
 *.sqlite3
+
+tweet_analyse/tweet_analyse/env_settings\.py
+
+tweet_analyse/dump\.rdb

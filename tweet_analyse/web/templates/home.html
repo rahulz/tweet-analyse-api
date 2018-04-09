@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Analyse topics from twitter {% endblock %}
+
+{% block body %}
+    {% verbatim %}
+    <div class="row" ng-app="analyse" ng-controller="Controller">
+        <div class="col-4 py-md-4 offset-md-4">
+            <div class="wrapper">
+                <div class="md-form">
+
+                    <input ng-model="q" placeholder="Search term" type="text" class="form-control" id="q">
+                </div>
+            </div>
+            <div>
+                <div style="text-align: right">
+                    <button class="btn btn-cyan" ng-click="generate()">analyse</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 py-md-4 offset-md-4" ng-if="progress">
+            <label>{{ progress.text }}</label>
+            <div class="progress" style="height: 20px">
+                <div class="progress-bar" role="progressbar" style="width: {{ progress.percentage }}%; height: 20px"
+                     aria-valuenow="25"
+                     aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+
+    {% endverbatim %}
+{% endblock %}

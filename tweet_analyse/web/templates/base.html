@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "mdb/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "mdb/css/mdb.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
+
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+{% block body %} {% endblock %}
+</body>
+<script type="application/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="application/javascript"
+        src="https://cdn.rawgit.com/AngularClass/angular-websocket/v2.0.0/dist/angular-websocket.min.js"></script>
+<script type="application/javascript"
+        src="{% static "js/app.js" %}"></script>
+
+</html>
