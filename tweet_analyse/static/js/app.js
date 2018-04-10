@@ -48,7 +48,9 @@ analyse.controller('Controller', function PhoneListController($scope, $timeout, 
             }, 1000)
         }
     });
-    $scope.generate = function () {
+    $scope.generate = function (q) {
+        if (q)
+            $scope.q = q;
         $scope.result = undefined;
         console.log("init");
         Socket.send({q: $scope.q, action: "generate"});

@@ -83,6 +83,20 @@ canvas {
     border-radius: 0 0 3px 3px;
 }
 
-.trends>button {
+.trends > button {
     padding: 5px;
+}
+
+.btn-tag {
+
+    font-family: Roboto;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+h1 {
+    font-family: Roboto;
+    font-weight: 100;
+    text-align: left;
+    padding-left: 20px;
 }
