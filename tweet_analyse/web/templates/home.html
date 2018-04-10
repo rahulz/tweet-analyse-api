@@ -4,7 +4,15 @@
 
 {% block body %}
     {% verbatim %}
+
+
     <div class="" ng-app="analyse" ng-controller="Controller">
+        <div class="overlay col-12">
+                <button class="btn btn-sm btn-amber" onclick="javascript:$('.overlay').slideUp('fast')">Close</button>
+            <div id="grid1" ui-grid="tweetGridOptions" class="grid col-6 col-md-offset-4"></div>
+
+
+        </div>
         <div class="col-4 py-md-4 offset-md-4">
             <div class="wrapper">
 
@@ -42,7 +50,7 @@
                 <div class="chart">
                     <canvas id="canvas"></canvas>
                     <small style="float: right" class="mono-text">*Based on recent {{ result.count }} public
-                        <button data-toggle="modal" data-target="#centralModalFluid">tweets</button>
+                        <a href="javascript:$('.overlay').slideDown()" data-toggle="modal" data-target="#centralModalFluid">tweets</a>
                     </small>
                 </div>
             </div>
