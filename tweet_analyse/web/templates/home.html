@@ -4,9 +4,6 @@
 
 {% block body %}
     {% verbatim %}
-
-
-
     <div class="" ng-app="analyse" ng-controller="Controller">
         <div class="col-4 py-md-4 offset-md-4">
             <div class="wrapper">
@@ -28,7 +25,7 @@
 
 
         <div class="col-4 py-md-4 offset-md-4" ng-if="status">
-            <label>{{ status.label }}</label>
+            <label class="mono-text">{{ status.label }}</label>
             <div class="progress" style="height: 3px;border-radius: 0">
                 <div class="progress-bar" role="progressbar" style="width: {{ status.progress }}%; height: 10px"
                      aria-valuenow="25"
@@ -44,6 +41,9 @@
             <div class="col-6">
                 <div class="chart">
                     <canvas id="canvas"></canvas>
+                    <small style="float: right" class="mono-text">*Based on recent {{ result.count }} public
+                        <button data-toggle="modal" data-target="#centralModalFluid">tweets</button>
+                    </small>
                 </div>
             </div>
         </div>
@@ -63,6 +63,7 @@
                 </button>
             </div>
         </div>
+
 
     </div>
 

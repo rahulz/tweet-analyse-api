@@ -37,6 +37,8 @@ def generate_report(query, channel_name, user_pk):
     data = {'progress': 100,
             'label': 'Done',
             'result': {
+                'tweets': [tweet._json for tweet in tweets],
+                'count': len(tweets),
                 'sentiment': sentiment,
                 'wordcloud': "data:image/png;base64," + base64.b64encode(img.read()).decode("utf-8")}}
     send(channel_name, {'type': 'update_client',

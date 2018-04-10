@@ -88,15 +88,18 @@ canvas {
 }
 
 .btn-tag {
-
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-weight: bold;
     border-radius: 30px;
 }
 
 h1 {
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-weight: 100;
     text-align: left;
     padding-left: 20px;
+}
+
+.mono-text {
+    font-family: monospace !important;
 }
