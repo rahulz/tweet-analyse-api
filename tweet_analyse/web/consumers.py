@@ -8,6 +8,7 @@ from web.tasks import generate_report
 class AnalyseConsumer(WebsocketConsumer):
     def connect(self):
         self.accept()
+        self.user = self.scope["user"]
 
     def disconnect(self, close_code):
         pass
@@ -16,10 +17,10 @@ class AnalyseConsumer(WebsocketConsumer):
         data = json.loads(text_data)
         if data['action'] == "generate":
             query = data['q']
-            self.send(text_data=json.dumps({
-                'message': "generating"
-            }))
-            generate_report.delay(query, self.channel_name)
+            # self.send(text_data=json.dumps({
+            #     'message': "generating"
+            # }))
+            generate_report.delay(query, self.channel_name, self.user.pk)
 
     def update_client(self, event):
         data = event['data']

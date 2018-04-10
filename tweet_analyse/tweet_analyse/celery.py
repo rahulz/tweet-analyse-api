@@ -14,11 +14,3 @@ app.config_from_object(settings, namespace='CELERY')
 
 app.autodiscover_tasks()
 
-
-@app.task()
-def sync_all():
-    return {
-        "users": sync_users(),
-        "projects": sync_projects(),
-        "events": sync_events()
-    }
