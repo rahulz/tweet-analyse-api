@@ -8,19 +8,24 @@
 
     <div class="" ng-app="analyse" ng-controller="Controller">
         <div class="overlay col-12">
-                <button class="btn btn-sm btn-amber" onclick="javascript:$('.overlay').slideUp('fast')">Close</button>
+            <button class="btn btn-sm btn-amber" onclick="javascript:$('.overlay').slideUp('fast')">Close</button>
             <div id="grid1" ui-grid="tweetGridOptions" class="grid col-6 col-md-offset-4"></div>
-
-
         </div>
         <div class="col-4 py-md-4 offset-md-4">
             <div class="wrapper">
-
                 <div class="md-form">
-
-                    <input ng-keyup="$event.keyCode == 13 ? generate() : null" ng-model="q" placeholder="Search term"
+                    <input ng-class="{'no-border': status}" ng-keyup="$event.keyCode == 13 ? generate() : null" ng-model="q" placeholder="Search term"
                            type="text" class="form-control" id="q">
                 </div>
+                <div class="col-12 loader" ng-if="status" >
+                    <div class="progress" style="height: 2px;border-radius: 0">
+                        <div class="progress-bar" role="progressbar" style="width: {{ status.progress }}%; height: 10px"
+                             aria-valuenow="25"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <label class="mono-text">{{ status.label }}</label>
+                </div>
+
             </div>
             <div>
                 <div style="text-align: right">
@@ -28,16 +33,6 @@
                         analyse
                     </button>
                 </div>
-            </div>
-        </div>
-
-
-        <div class="col-4 py-md-4 offset-md-4" ng-if="status">
-            <label class="mono-text">{{ status.label }}</label>
-            <div class="progress" style="height: 3px;border-radius: 0">
-                <div class="progress-bar" role="progressbar" style="width: {{ status.progress }}%; height: 10px"
-                     aria-valuenow="25"
-                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
 
@@ -50,7 +45,8 @@
                 <div class="chart">
                     <canvas id="canvas"></canvas>
                     <small style="float: right" class="mono-text">*Based on recent {{ result.count }} public
-                        <a href="javascript:$('.overlay').slideDown()" data-toggle="modal" data-target="#centralModalFluid">tweets</a>
+                        <a href="javascript:$('.overlay').slideDown()" data-toggle="modal"
+                           data-target="#centralModalFluid">tweets</a>
                     </small>
                 </div>
             </div>

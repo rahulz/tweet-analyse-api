@@ -122,8 +122,9 @@ h1 {
 .ui-grid {
     font-family: Roboto;
     font-weight: 300;
-    border:none !important;
+    border: none !important;
 }
+
 .ui-grid-viewport {
     overflow-x: hidden !important;
 }
@@ -146,4 +147,15 @@ h1 {
 
 .ui-grid-column-menu-button {
     display: none;
+}
+
+input.no-border {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+    padding-bottom: .5rem !important;
+}
+
+.loader {
+    text-align: left;
+    padding: 0;
 }
