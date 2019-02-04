@@ -13,7 +13,7 @@ class AnalyseConsumer(WebsocketConsumer):
     def disconnect(self, close_code):
         pass
 
-    def receive(self, text_data):
+    def receive(self, text_data=None, bytes_data=None):
         data = json.loads(text_data)
         if data['action'] == "generate":
             query = data['q']
